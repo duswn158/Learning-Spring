@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="ingu" class="com.test02.Address">
+		<constructor-arg>
+			<value>황인규</value>
+		</constructor-arg>
+		<constructor-arg value="대야미동" />
+		<constructor-arg value="010-222-22222" />
+	</bean>
+	
+	<bean id="seng" class="com.test02.Address">
+		<!-- index : 파라미터 들어가는 순서 -->
+		<constructor-arg index="0" value="오승민"></constructor-arg>
+		<constructor-arg index="1" value="용인시 상아동"></constructor-arg>
+		<constructor-arg index="2" value="010-1111-2222"></constructor-arg>
+	</bean>
+
+</beans>

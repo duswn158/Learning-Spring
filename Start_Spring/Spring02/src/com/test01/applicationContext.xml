@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="apple" class="com.test01.MessageBeanImpl"></bean>
+	<!-- MessageBeanImpl apple = new MessageBeanImpl() 과 같다 -->
+	
+	<bean id="watermelon" class="com.test01.MessageBeanImpl">
+		<constructor-arg>
+			<value>WATERMELON</value>
+		</constructor-arg>
+		<constructor-arg value="20000"></constructor-arg>
+	</bean>
+	<!-- MessageBeanImpl watermelon = new MessageBeanImpl("WATERMELON", 20000); 과 같다 -->
+	
+	<bean id="melon" class="com.test01.MessageBeanImpl">
+		<constructor-arg index="1" value="5000"></constructor-arg>
+		
+		<constructor-arg index="0" value="참외"/>
+		<!-- 시작태그와 끝태그 사이에 아무것도 없을 때 위와같이 사용 가능 -->
+	</bean>
+
+</beans>
