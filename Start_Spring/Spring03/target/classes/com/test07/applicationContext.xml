@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 객체 생성 -->
+	<bean id="igtv" class="com.test07.IgTV"></bean>
+	
+	<!-- lazy-init="true" : bean 컨테이너가 만들어질때 객체를 모두 생성해두지만 -->
+	<!-- 해당 bean을 호출 할때까지 생성하지않음 이 속성이 없으면 호출하지 않아도 객체는 생성될 수 있음 -->
+	<bean id="samsong" class="com.test07.SamsongTV" lazy-init="true"></bean>
+
+</beans>

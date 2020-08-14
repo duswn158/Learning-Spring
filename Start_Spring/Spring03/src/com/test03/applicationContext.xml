@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- class (패키지 + 클래스명) -->
+	<bean id="ingu" class="com.test03.Engineer">
+		<constructor-arg name="name" value="황인규"></constructor-arg>
+		<constructor-arg name="salary" value="4000"></constructor-arg>
+		<property name="dept" value="엔지니어"></property>
+	</bean>
+	
+	<bean id="oh" class="com.test03.Developer">
+		<constructor-arg name="name" value="오승민"></constructor-arg>
+		<constructor-arg name="salary" value="5000"></constructor-arg>
+		<property name="dept" value="개발자"></property>
+	</bean>
+
+</beans>

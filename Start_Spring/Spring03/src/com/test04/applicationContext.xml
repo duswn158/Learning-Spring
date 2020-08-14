@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!-- Emp 타입을 파라미터로 받기 위해 객체생성 먼저 -->
+	<bean id="lee" class="com.test04.Emp">
+		<property name="name" value="이순신"></property>
+		<property name="salary" value="2500000"></property>
+	</bean>
+	
+	<bean id="leess" class="com.test04.Engineer">
+		<!-- 객체를 참조해서 값을 주입시킨다 -->
+		<constructor-arg name="emp" ref="lee"/>
+		<constructor-arg name="dept" value="기술팀"/>
+	</bean>
+	
+	<bean id="hong" class="com.test04.Emp">
+		<property name="name" value="홍길동"></property>
+		<property name="salary" value="300000"></property>
+	</bean>
+	
+	<bean id="honggd" class="com.test04.Developer">
+		<!-- 객체를 참조해서 값을 주입시킨다 -->
+		<constructor-arg index="0" ref="hong"/>
+		<constructor-arg index="1" value="개발팀"/>
+	</bean>
+
+</beans>

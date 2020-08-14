@@ -10,6 +10,9 @@
 		<config>src/com/test01/applicationContext.xml</config>
 		<config>src/com/test02/applicationContext.xml</config>
 		<config>src/com/test03/applicationContext.xml</config>
+		<config>src/com/test04/applicationContext.xml</config>
+		<config>src/com/test05/applicationContext.xml</config>
+		<config>src/com/test07/applicationContext.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
