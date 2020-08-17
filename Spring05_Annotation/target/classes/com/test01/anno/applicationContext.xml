@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- 
+		context : 내가만든 프로젝트, 만들고있는 프로그램을 의미.
+		container : 어떠한것들을 가지고있는, 포함하고있는, 담고있는 것들.
+		base-package : 지정된 폴더부터 그 아래 폴더들 모두 확인하겠다.
+		
+		즉, 아래구문은 base-package부터 그 안에있는걸 모두 읽어서 component가 있으면 bean으로 만들어(등록해) 줄것이다 라는것.
+		즉 @component라고 걸려있는 아이들 (NickName 등).
+	 -->
+	<context:component-scan base-package="com.test01.anno"></context:component-scan>
+
+
+</beans>
