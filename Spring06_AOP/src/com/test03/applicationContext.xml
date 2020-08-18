@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<!-- 자동으로 proxy객체를 만들어준다 -->
+	<!-- proxy : 타켓인척 가로채, ccc를 연결해주는애 자기할거 다하면 리턴시켜줌 -->
+	<aop:aspectj-autoproxy/>
+	
+	<bean id="man" class="com.test03.Man"></bean>
+	<bean id="Woman" class="com.test03.Woman"></bean>
+	<bean id="myAspect" class="com.test03.MyAspect"></bean>
+	
+	<aop:config>
+		<!-- 어드바이스와 포인트컷이 연결된애 -->
+		<aop:aspect ref="myAspect">
+			<!-- 메서드 이름 변경가능, pointcut="띄어쓰기해야함 주의!" -->
+			<!-- 
+				public * *(..) : public에 리턴타입 상관없음, 이름상관없음, 파라미터 ..(0또는 그 이상)이면 된다. 
+				즉 조건에 부합하기 때문에 앞뒤로 해당 메서드들이 붙은것.
+			-->
+
+			<!-- 1. 타켓을 호출하기 전에 before메서드 호출 -->
+			<!-- <aop:before method="before" pointcut="execution(public * *(..))"/> -->
+			
+			<!-- Man클래스가 가진 classWork를 호출될때 before라는 ccc를 연결 -->
+			<!-- <aop:before method="before" pointcut="execution(public * com.test03.Woman.classWork(..))"/> -->
+			
+			<!-- 연산을 한다고 하면 호출 순서따라 값이 달라짐 -->
+			<!-- Man을 향해 가다가 프록시가 가로채고, after면 Man을 호출하고, after메서드를 호출하고 리턴을 하게된다. -->
+			<aop:before method="before" pointcut="execution(public void com.test03.Woman.classWork())"/>
+			<aop:after method="after" pointcut="execution(public void com.test03.Man.classWork())"/>
+			
+			 
+			<!-- 2. 타겟 호출 -->
+
+			<!-- 3. 타켓을 호출한 후에 after메서드 호출 -->
+			<!-- <aop:after method="after" pointcut="execution(public * *(..))"/> -->
+			<!-- <aop:after method="after" pointcut="execution(public * com.test03.Man.classWork(..))"/> -->
+
+			<!-- 4. 그 후에 리턴 -->
+
+		</aop:aspect>
+	</aop:config>
+	
+	<!-- 
+		ccc가 pointcut에 맞아야 cc와 연결될 수 있음 
+		pointcut은 언제 프록시를 만들어서 언제 연결할건지를 알려줌 
+		즉 어디에 ccc를 붙일것인지를 알려주는, 특정 joinpoint를 선택해주는애
+	-->
+
+</beans>

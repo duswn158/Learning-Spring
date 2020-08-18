@@ -1,0 +1,23 @@
+package com.test07;
+
+public class MessageBeanImpl implements MessageBean {
+
+	private String name;
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	@Override
+	public void sayHello() {
+		try {
+			// 2초동안 멈춘다
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("Hello, " + name);
+	}
+
+}
