@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>Spring07_HelloMVC</display-name>
+  
+  <!-- 어떤애를 호출해주어야 하는지 실행해야 하는지 정하는 listener -->
+  <!-- TODO : 02. listener -->
+  <listener>
+  		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
+  <!-- context-param : context 전체(즉 해당 프로젝트, 해당 웹 어플리케이션 전체)에서 사용할 수 있는 parameter -->
+  <!-- init-param : 같은폴더에서 사용가능한 parameter -->
+  <context-param>
+  		<param-name>contextConfigLocation</param-name>
+  		<param-value>/WEB-INF/applicationContext.xml</param-value>
+  </context-param>
+  
+  <!-- TODO : 03. DispatcherServlert (hello-servlet) -->
+  <servlet>
+  		<servlet-name>hello</servlet-name>
+  		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <!-- /*.do 아님 에러나니 주의!! -->
+  <servlet-mapping>
+  		<servlet-name>hello</servlet-name>
+  		<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

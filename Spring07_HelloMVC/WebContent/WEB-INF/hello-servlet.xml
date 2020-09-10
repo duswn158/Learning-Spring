@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+<!-- web.xml에 있는 서블릿 이름 - 서블릿 즉, hello-servlet.xml 로 파일명이 정해짐 -->
+
+	<!-- controller와 dao,biz 등을 호출함 -->
+	<!-- 해당 servlet 내에서 사용될 설정 -->
+	<context:component-scan base-package="com.hello.mvc"/>
+	<mvc:annotation-driven />
+
+</beans>
