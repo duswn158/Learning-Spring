@@ -8,7 +8,7 @@ import com.mvc.updown.dto.UploadFile;
 
 // implements Validator : org.springframework
 @Service
-//controller 에서 FileValidator 를 호출하는데 호출할때 사용하려고 그냥 Service 어노테이션 걸어둠
+//controller 에서 FileValidator 를 호출하는데 호출할때 사용하려고 그냥 Service 어노테이션 걸어둔것
 public class FileValidator implements Validator {
 
 	@Override
