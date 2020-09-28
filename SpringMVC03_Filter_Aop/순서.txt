@@ -16,17 +16,6 @@ Filter
 
 
 Aop
-리파지토리 (*Dao*) Dao에서 list 호출했을때 세션 만들어지고 값 리턴 받아서  aop start 하는 부분
-즉 *Dao* 호출할때 aop 동작시키고 있음
-컨트롤러 처리 이후에 실행
-관점지향
-해당 서버안에있는 자바 클래스들 중에서 ccc와 cc중 공통적인 부분들을 분리해서 붙는 시점에 동작, 특정위치, 특정 시점에 동작
-공통적인 부분들을 모아서 동작
-해당 안에있는 클래스들 중에서 공통관심사항과 주관심사항을 분리하여
-해당 공통관심사항을 내가원하는 점에서 실행시켜주는것을 말함
-서버내에서 특정 부분 특정시점에 붙는 시점에서 작동하게 된다
-해당 클래스에서 cc와ccc를 분리해서 공통 관심사항을 호출할 시점에 붙여서 실행시켜주는 것
-
 11. pom.xml : org.aspectj. (aspectjrt, aspectjweaver)
 12. LogAop (com.mvc.upgrade.common.aop.LogAop)
 13. aop-context.xml (WEB-INF/spring/appServlet/aop-context.xml)
